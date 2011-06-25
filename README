@@ -1,0 +1,6 @@
+A scalable, resilient message queue, built in Scala.
+
+- Conveyorqueue nodes arrange themselves in a ring.
+- A client of the queue (submitter or retriever) connects to a randomly selected node.
+- messages submitted are FIFO ordered within the node but only loosely ordered across the whole ring.
+

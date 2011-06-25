@@ -1,0 +1,36 @@
+package org.conveyorqueue.io;
+
+option java_package = "nettytest";
+option java_outer_classname = "ConvQClientProto";
+
+message ClientMessage {
+
+    message ClientRequest {
+
+        enum RequestType {
+        PUT = 0;
+        PEEK = 1;
+        POP = 2;
+        }
+
+    required RequestType req = 1;
+    optional bytes msg = 2;
+
+    }
+
+    message ServerResponse {
+
+        enum ResponseType {
+        OK = 0;
+        ERROR = 1;
+        NULL = 2;
+        }
+
+    required ResponseType resp = 1;
+
+    }
+
+    optional ClientRequest req = 1;
+    optional ServerResponse resp = 2;
+
+}
